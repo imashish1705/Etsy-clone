@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+import NavigationBar from "./Components/Header/NavigationBar";
+import Footer from "./Components/Footer/Footer";
+import FooterLine from "./Components/Footer/FooterLine";
+import HeroSection from "./Components/HeroArea/HeroSection"
+import Layout from "./Components/Layout/Layout";
+import RecentlyViewed from "./Components/RecentlyView/RecentlyView";
+import { Route,Switch,} from 'react-router-dom';
+import Discover from './Components/DiscoverSection/Discover';
+import ShopOurSelections from "./Components/ShopOurSelection/ShopOurSelection";
+import WhatIsEtsy from "./Components/WhatIsEsty/WhatisEtsy";
+import NewsLetter from "./Components/NewsLetter/NewsLetter";
+class App extends Component {
+  render() {
+    return (
+      <div>
+      <NavigationBar/>
+      <Layout>
+      <HeroSection/>
+      </Layout>
+  <Switch>
+     <Route exact path="/" />
+  </Switch>
+  <RecentlyViewed/>
+  <Discover/>
+  <ShopOurSelections/>
+  <WhatIsEtsy/>
+  <NewsLetter/>
+  <Footer/>
+  <FooterLine/>
+  </div>
+    )
+  }
 }
-
 export default App;
